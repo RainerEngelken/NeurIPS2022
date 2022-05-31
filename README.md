@@ -44,7 +44,7 @@ Example scripts for training networks on one, two and three stimuli.\
 runOneStimulus.jl trains an RNN on tracking one OU-signal showing that the network becomes more tightly balanced over training epochs.\
 runTwoStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into two weakly-connected subnetworks.\
 runTheeStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into three weakly-connected subnetworks.\
-![Alt text](figures/S=3.svg?raw=true "Result of running runTheeStimuli.jl")
+![Training RNN on two signals leads to balanced subpopulations](/figures/S=2.svg?raw=true "balanced subnetworks emerge  after runTheeStimuli.jl")
 
 ### Implementation details
 A full specification of packages used and their versions can be found in _packages.txt_ .\
