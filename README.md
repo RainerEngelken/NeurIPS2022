@@ -34,9 +34,11 @@ end
 
 ## Repository Overview
 
-### src/ contains the source files
+### src/ 
+Contains the source files.
 generateInputOutputOUAnalytical.jl - this solves the OU-process analytically incrementally and generates input and target output
-ib12trainingBalancedNetsNeurIPS03plotJmeans.jl - this trains a RNN on the autoencoder task and visualizes the results during training
+trainingBalancedNets.jl - this trains a RNN on the autoencoder task and visualizes the results during training
+ib
 
 ### example_code/
 Example scripts for training networks on one, two and three stimuli.\
