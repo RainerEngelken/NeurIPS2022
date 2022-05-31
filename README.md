@@ -9,15 +9,28 @@ In this work we show theoretically and empirically that more tightly balanced ne
 
 #### Prerequisites
 - Download [Julia](https://julialang.org/downloads/) 
-- 
+
 #### Dependencies
 - Julia (>= 1.5, tested on 1.6)
 - Flux, PyPlot, Statistics, DelimitedFiles,RandomNumbers, ForwardDiff, BSON
 - scipy
 
+## Getting started
+To install the required packages, run the following in the julia REPL after installing Julia:
 
+```
+using Pkg
 
+for pkg in ["Flux", "PyPlot", "Statistics", "DelimitedFiles", "RandomNumbers", "ForwardDiff", "BSON"]
+    Pkg.add(pkg)
+end
+```
 
+For example, to train an RNN on tracking two OU-signals, run:
+```
+include("example_code/runOneStimulus.jl")
+end
+```
 
 ## Repository Overview
 
@@ -27,9 +40,9 @@ ib12trainingBalancedNetsNeurIPS03plotJmeans.jl - this trains a RNN on the autoen
 
 ### example_code/
 Example scripts for training networks on one, two and three stimuli.\
-runOneStimulus.jl trains an RNN on tracking one OU-signal showing that the network becomes more tightly balanced over training epochs.
-runTwoStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into two weakly-connected subnetworks.
-runTheeStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into three weakly-connected subnetworks.
+runOneStimulus.jl trains an RNN on tracking one OU-signal showing that the network becomes more tightly balanced over training epochs.\
+runTwoStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into two weakly-connected subnetworks.\
+runTheeStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into three weakly-connected subnetworks.\
 
 All simulations were run on a single CPU and took on the order of minutes to a few of hours.
 
