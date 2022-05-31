@@ -1,0 +1,14 @@
+julia => v"1.6.6"
+
+[fbb218c0] BSON v0.3.4
+[aaaa29a8] Clustering v0.14.2
+[8f4d0f93] Conda v1.6.0
+[717857b8] DSP v0.6.10
+[587475ba] Flux v0.11.3
+[f6369f11] ForwardDiff v0.10.25
+[6f286f6a] MultivariateStats v0.8.0
+[438e738f] PyCall v1.93.0
+[d330b81b] PyPlot v2.10.0
+[e6cf234a] RandomNumbers v1.5.3
+[e88e6eb3] Zygote v0.5.17
+[8bb1440f] DelimitedFiles
