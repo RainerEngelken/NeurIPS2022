@@ -35,10 +35,9 @@ end
 ## Repository Overview
 
 ### src/ 
-Contains the source files.
-generateInputOutputOUAnalytical.jl - this solves the OU-process analytically incrementally and generates input and target output
-trainingBalancedNets.jl - this trains a RNN on the autoencoder task and visualizes the results during training
-ib
+Contains the source files.\
+generateInputOutputOUAnalytical.jl - solves the OU-process distributionally correct to generate input and target output\
+trainingBalancedNets.jl - trains a RNN on the autoencoder task and visualizes the results during training\
 
 ### example_code/
 Example scripts for training networks on one, two and three stimuli.\
@@ -46,5 +45,27 @@ runOneStimulus.jl trains an RNN on tracking one OU-signal showing that the netwo
 runTwoStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into two weakly-connected subnetworks.\
 runTheeStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into three weakly-connected subnetworks.\
 
-All simulations were run on a single CPU and took on the order of minutes to a few of hours.
 
+### Implementation details
+
+A full specification of packages used and their versions can be found in _packages.txt_.\
+
+Results were found not to depend strongly on details of parameters (e.g. temporal discretization dt, network size N, batch size B etc).\
+For learning rates the default ADAM parameters were used to avoid any impression of fine-tuning.\
+
+For all calculations, a 'burn-in' period was discarded to let the network state converge to a stationary state.\
+
+All simulations were run on a single CPU and took on the order of minutes to a few of hours.\
+
+
+
+<!---
+### figures/
+Contains all figures of the main text and the supplement.
+-->
+
+
+<!---
+### tex/
+Contains the raw text of the main text and the supplement.
+-->
