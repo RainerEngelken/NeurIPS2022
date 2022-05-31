@@ -1,18 +1,35 @@
-# NeurIPS2022
-training-balanced-nets
+# A time-resolved theory of information encoding in recurrent neural networks
 
-Example code that demonstrates how training a RNN on tracking a time-varying input makes it more tightly balanced and tracking on multiple stimulus leads to the emergence of tightly balanced subnetworks that are weakly conncted in between.
+This repository contains the implementation code for manuscript: <br>
+__A time-resolved theory of information encoding in recurrent neural networks__ <br>
+## Overview
+In this work we show theoretically and empirically that more tightly balanced networks can track time-varying signals more reliable which results in a higher information rate. Moreover, this eample code demonstrates how training a RNN on tracking a time-varying input makes it more tightly balanced and tracking on multiple stimulus leads to the emergence of tightly balanced subnetworks that are weakly conncted in between.
 
-## to run code for tracking one input stimulus:
-include("ib12trainingBalancedNetsNeurIPS01.jl")
-b=1.0
-N, Nepochs, B, S, T, seedIC, seedInput, seedNet, lrIn, beta1, beta2, IC, startRandom, plotStuff,tauS, gInit,gbarInit,Iext, Iext1,dt,delay,sigma,nl,wsStd,wsMean,wrStd,wrMean=100,100001,10,1,50,1,1,1,1e-3,0.9,0.999,1,true,true,0.1,0.032,-1.0f0*b,1.0f0*b,0.1f0*b,0.2f0,0,1.0f0,relu,0.01f0,1.0f0,0.2f0,1.0f0; seed=1
-losstrace = @time trainCopy.(N, Nepochs, B, S, T,seedIC, seedInput, seed, lrIn, beta1, beta2, IC, startRandom,plotStuff,tauS, gInit,gbarInit, Iext,Iext1,dt,delay,sigma,nl,0wsStd,wsMean,wrStd,wrMean,1f-4,true,"codeNeurIPS")
+## Installation
 
-## to run code for tracking two input stimulus:
-include("ib12trainingBalancedNetsNeurIPS01.jl")
-b=1.0
-N, Nepochs, B, S, T, seedIC, seedInput, seedNet, lrIn, beta1, beta2, IC, startRandom, plotStuff,tauS, gInit,gbarInit,Iext, Iext1,dt,delay,sigma,nl,wsStd,wsMean,wrStd,wrMean=100,100001,10,2,50,1,1,1,1e-3,0.9,0.999,1,true,true,0.1,0.032,-1.0f0*b,1.0f0*b,0.1f0*b,0.2f0,0,1.0f0,relu,0.01f0,1.0f0,0.2f0,1.0f0; seed=1
-losstrace = @time trainCopy.(N, Nepochs, B, S, T,seedIC, seedInput, seed, lrIn, beta1, beta2, IC, startRandom,plotStuff,tauS, gInit,gbarInit, Iext,Iext1,dt,delay,sigma,nl,0wsStd,wsMean,wrStd,wrMean,1f-4,true,"codeNeurIPS")
+#### Prerequisites
+- Download [Julia](https://julialang.org/downloads/) 
+- 
+#### Dependencies
+- Julia (>= 1.5, tested on 1.6)
+- Flux, PyPlot, Statistics, DelimitedFiles,RandomNumbers, ForwardDiff, BSON
+- scipy
 
+
+
+
+
+## Repository Overview
+
+### src/ contains the source files
+generateInputOutputOUAnalytical.jl - this solves the OU-process analytically incrementally and generates input and target output
+ib12trainingBalancedNetsNeurIPS03plotJmeans.jl - this trains a RNN on the autoencoder task and visualizes the results during training
+
+### example_code/
+Example scripts for training networks on one, two and three stimuli.\
+runOneStimulus.jl trains an RNN on tracking one OU-signal showing that the network becomes more tightly balanced over training epochs.
+runTwoStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into two weakly-connected subnetworks.
+runTheeStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into three weakly-connected subnetworks.
+
+All simulations were run on a single CPU and took on the order of minutes to a few of hours.
 
