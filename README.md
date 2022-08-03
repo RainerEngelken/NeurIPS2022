@@ -46,6 +46,13 @@ runTwoStimuli.jl trains an RNN on two OU-signal stimulus showing that the networ
 runTheeStimuli.jl trains an RNN on two OU-signal stimulus showing that the network becomes more tightly balanced over training epochs and breaks up into three weakly-connected subnetworks.\
 ![Training RNN on two signals leads to balanced subpopulations](/figures/S=2.svg?raw=true "balanced subnetworks emerge  after runTheeStimuli.jl")
 
+
+### Training dynamics of eigenvalues:
+Here is a visualization of the recurrent weight matrix and the eigenvalues throughout across training epochs.
+![Training dynamics of networks trained on multiple signals shows first tracking of global mean input](eigenvalue_movie_2D_task.gif)
+
+
+
 ### Implementation details
 A full specification of packages used and their versions can be found in _packages.txt_ .\
 Results were found not to depend strongly on details of parameters (e.g. temporal discretization dt, network size N, batch size B etc).\
