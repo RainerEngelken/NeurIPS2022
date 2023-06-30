@@ -3,7 +3,7 @@
 This repository contains the implementation code for manuscript: <br>
 __A time-resolved theory of information encoding in recurrent neural networks__ <br>
 ## Overview
-In this work we show theoretically and empirically that more tightly balanced networks can track time-varying signals more reliable which results in a higher information rate. Moreover, this eample code demonstrates how training a RNN on tracking a time-varying input makes it more tightly balanced and tracking on multiple stimulus leads to the emergence of tightly balanced subnetworks that are weakly conncted in between.
+In this work, we show theoretically and empirically that more tightly balanced networks can track time-varying signals more reliably which results in a higher information rate. Moreover, this example code demonstrates how training an RNN on tracking a time-varying input makes it more tightly balanced, and tracking on multiple stimuli leads to the emergence of tightly balanced subnetworks that are weakly connected in between.
 
 ## Installation
 
